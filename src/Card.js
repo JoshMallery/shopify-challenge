@@ -1,14 +1,15 @@
 import React from "react";
 import "./Card.css";
 
-const Card = ({props}) =>{
+const Card = ({id,prompt,response,deleteResponse}) =>{
 
   return(
-    <div>
+    <div key={id}>
       <h4>Prompt:</h4>
-      <p>{this.props.prompt}</p>
+      <p>{prompt}</p>
       <h4>Response:</h4>
-      <p>{this.props.response}</p>
+      <p>{response}</p>
+      <button onClick={() => deleteResponse(id)}></button>
     </div>
   )
 }
