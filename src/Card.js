@@ -4,7 +4,7 @@ import "./Card.css";
 const Card = ({id,prompt,response,deleteResponse}) =>{
 
   return(
-    <div key={id}>
+    <div>
       <h4>Prompt:</h4>
       <p>{prompt}</p>
 

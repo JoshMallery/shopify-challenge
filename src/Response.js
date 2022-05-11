@@ -7,7 +7,7 @@ const Response = ({data,deleteResponse}) => {
   const responseList = data.map(response =>{
     return(
       <Card
-
+        key={response.id}
         id={response.id}
         prompt={response.prompt}
         response={response.response}
