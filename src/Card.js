@@ -1,7 +1,7 @@
 import React from "react";
 import "./Card.css";
 
-const Card = ({id,prompt,response,deleteResponse}) =>{
+const Card = ({id,prompt,response,favorite,deleteResponse,changeFavorite}) =>{
 
   return(
     <div>
@@ -11,6 +11,7 @@ const Card = ({id,prompt,response,deleteResponse}) =>{
       <h4>Response:</h4>
       <p>{response}</p>
 
+      <button onClick={() => changeFavorite(id)}>{!favorite ? "Click to favorite" : "Click to unfavorite"}</button>
       <button onClick={() => deleteResponse(id)}>Click to Delete</button>
     </div>
   )

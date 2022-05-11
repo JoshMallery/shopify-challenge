@@ -10,8 +10,8 @@ class App extends Component {
     this.state = {
       responses:
       [
-        {id: 1, prompt:"pizzaa",response:"pastass"},
-        {id: 2, prompt:"cars",response:"ford, GM"}
+        {id: 1, prompt:"pizzaa",response:"pastass",favorite:false},
+        {id: 2, prompt:"cars",response:"ford, GM",favorite:true}
       ]
     }
   }
@@ -41,7 +41,7 @@ requestResponse = (prompt) => {
 
 
 addResponse = (data,prompt) => {
-  this.setState({responses: [...this.state.responses,{prompt:prompt,response:data.choices[0].text,id:data.id}]});
+  this.setState({responses: [{prompt:prompt,response:data.choices[0].text,id:data.id},...this.state.responses]});
 }
 
 deleteResponse = (id) => {
@@ -49,13 +49,23 @@ deleteResponse = (id) => {
   this.setState({responses:filteredResponses});
 }
 
+changeFavorite = (id) => {
+  const flipFavorite = this.state.responses.map(response =>{
+    if(response.id === id) {
+      response.favorite = !response.favorite
+    }
+    return response
+  })
+  this.setState({ideas:flipFavorite})
+}
+
 render() {
   return(
     <main className="App">
       <h1>Fun with AI!!</h1>
       {!this.state.responses.length && <h3>You should totally talk to the Bot! input data in the form and submit!</h3>}
-      <Form requestResponse={this.requestResponse}/>
-      <Response data={this.state.responses} deleteResponse={this.deleteResponse}/>
+      <Form requestResponse={this.requestResponse} />
+      <Response data={this.state.responses} deleteResponse={this.deleteResponse} changeFavorite={this.changeFavorite}/>
     </main>
   )
 }

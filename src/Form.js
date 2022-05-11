@@ -16,6 +16,7 @@ class Form extends Component {
   submitHandler = (event) => {
   event.preventDefault();
   this.props.requestResponse(this.state.prompt)
+  this.setState({prompt:""})
 }
 
   render() {
