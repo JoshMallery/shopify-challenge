@@ -25,6 +25,7 @@ class Form extends Component {
         <input
           type="text"
           name="prompt"
+        
           value={this.state.prompt}
           onChange={event => this.changeHandler(event)}
         />
