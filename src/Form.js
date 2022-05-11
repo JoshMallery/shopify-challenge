@@ -29,6 +29,7 @@ class Form extends Component {
           value={this.state.prompt}
           onChange={event => this.changeHandler(event)}
         />
+        <br /><br />
         <button onClick={event => this.submitHandler(event)}>Click to SUBMIT a response</button>
       </form>
     )
