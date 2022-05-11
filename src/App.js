@@ -9,15 +9,20 @@ class App extends Component {
     this.state = {
       responses:
       [
-      {id:1, prompt:"pizzaa",response:"pastass"}
+      {id:1, prompt:"pizzaa",response:"pastass"},
+      {id:2, prompt:"cars",response:"ford, GM"}
       ]
     }
   }
 
-addResponse = ({prompt,response}) => {
+
+
+
+
+addResponse = (prompt,response) => {
 
   //some cool fetch stuff here component will Mount?
-  // this.setState(responses:[ ...this.state.responses,{prompt:prompt,response:response},}]);
+  this.setState({responses: [...this.state.responses,{prompt:prompt,response:response}]});
 }
 
 deleteResponse = (id) => {
