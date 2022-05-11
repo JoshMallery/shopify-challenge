@@ -16,6 +16,7 @@ class Form extends Component {
   submitHandler = (event) => {
   event.preventDefault();
   this.props.requestResponse(this.state.prompt)
+  this.setState({prompt:""})
 }
 
   render() {
@@ -24,6 +25,7 @@ class Form extends Component {
         <input
           type="text"
           name="prompt"
+          placeholder="Enter a Fun Question for the AI!"
           value={this.state.prompt}
           onChange={event => this.changeHandler(event)}
         />
