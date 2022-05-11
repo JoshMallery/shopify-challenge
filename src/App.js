@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from "react";
+import Form from "./Form";
+import Responses from "./Responses";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      responses:
+      [
+      {prompt:"pizzaa",response:"pastass"}
+      ]
+    }
+  }
+
+addResponse = ({prompt,response}) => {
+
+  //some cool fetch stuff here component will Mount?
+  this.setState(responses:[{prompt:prompt,response:response,...this.state.responses}]);
+}
+
+deleteResponse = (id) => {
+  const filteredResponses = this.state.responses.filter(response => response.id !== id);
+  this.setState({responses:filteredResponses});
+}
+
+render() {
+  return(
+    <main classname="App">
+      <h1>Fun with AI!!</h1>
+      {!this.state.responses.length && <h3>You should totally talk to the Bot! input data in the form and submit!</h3>}
+      <Form addResponse={this.addResponse}/>
+      <Responses data={this.state.responses} deleteResponse={this.deleteResponse}/>
+    </main>
+  )
+}
+
+
 }
 
 export default App;
