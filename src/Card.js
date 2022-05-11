@@ -7,7 +7,7 @@ import favoriteHeart from "./images/favorite.png"
 const Card = ({id,prompt,response,favorite,deleteResponse,changeFavorite}) =>{
 
   return(
-    <div>
+    <div className="card">
       <h4>Prompt:</h4>
       <p>{prompt}</p>
 

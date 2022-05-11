@@ -8,16 +8,15 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      responses:
-      [
-        {id: 1, prompt:"pizzaa",response:"pastass",favorite:false},
-        {id: 2, prompt:"cars",response:"ford, GM",favorite:true}
-      ]
+      responses:[],
+      loading: false
     }
   }
 
 
 requestResponse = (prompt) => {
+  this.setState({loading:true});
+
   const data = {
    prompt: prompt,
    temperature: 0.5,
@@ -34,15 +33,22 @@ requestResponse = (prompt) => {
      Authorization: `Bearer ${process.env.REACT_APP_OPENAI_SECRET}`,
    },
    body: JSON.stringify(data),
-  })
+    })
   .then(response => response.json())
-  .then(data => this.addResponse(data,prompt))
+  .then(data => {
+      this.setState({
+        loading:false,
+        responses:
+        [
+          { prompt:prompt,
+            response:data.choices[0].text,
+            id:data.id
+          },
+            ...this.state.responses
+        ]
+      })
+    });
   }
-
-
-addResponse = (data,prompt) => {
-  this.setState({responses: [{prompt:prompt,response:data.choices[0].text,id:data.id},...this.state.responses]});
-}
 
 deleteResponse = (id) => {
   const filteredResponses = this.state.responses.filter(response => response.id !== id);
@@ -65,6 +71,7 @@ render() {
       <h1>Fun with AI!!</h1>
       {!this.state.responses.length && <h3>You should totally talk to the Bot! input data in the form and submit!</h3>}
       <Form requestResponse={this.requestResponse} />
+      {this.state.loading && <h2>Loading Response From AI Now!</h2>}
       <Response data={this.state.responses} deleteResponse={this.deleteResponse} changeFavorite={this.changeFavorite}/>
     </main>
   )
