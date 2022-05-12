@@ -8,11 +8,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      responses:[
-        {prompt:"give me a high 5",response:"too slow",id:78},
-        {prompt:"give me a high 10",response:"too slow",id:77},
-        {prompt:"tell me a joke",response:"the joke is at the keyboard",id:75}
-      ],
+      responses:[],
       loading: false
     }
   }
@@ -72,8 +68,8 @@ changeFavorite = (id) => {
 render() {
   return(
     <main className="App">
-      <h1>Fun with AI!!</h1>
-      {!this.state.responses.length && <h2>You should totally talk to the Bot! input data in the form and submit!</h2>}
+      <h1>Fun with AI!</h1>
+      {!this.state.responses.length && <h2>Please type a prompt in the Box below!</h2>}
       <Form requestResponse={this.requestResponse} />
       {this.state.loading && <h3>Loading Response From AI Now!</h3>}
       <Response data={this.state.responses} deleteResponse={this.deleteResponse} changeFavorite={this.changeFavorite}/>

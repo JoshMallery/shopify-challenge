@@ -3,7 +3,6 @@ import Card from "./Card"
 import "./Response.css"
 
 const Response = ({data,deleteResponse,changeFavorite}) => {
-  //need to map the array of state that was passed down
   const responseList = data.map(response =>{
     return(
       <Card
@@ -16,13 +15,13 @@ const Response = ({data,deleteResponse,changeFavorite}) => {
         favorite={response.favorite}
       />
     )
-  })
+  });
 
   return(
-    <div>
+    <div className="responses-container">
       {responseList}
     </div>
   )
-}
+};
 
 export default Response
