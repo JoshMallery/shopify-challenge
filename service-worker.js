@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/shopify-challenge/precache-manifest.c73d95c054a29b649c38aee6770a77d2.js"
+  "/shopify-challenge/precache-manifest.a92914af48ec91561c0e6be85ff876d1.js"
 );
 
 workbox.clientsClaim();
