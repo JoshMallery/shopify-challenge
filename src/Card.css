@@ -1,0 +1,28 @@
+.card {
+	background: #F8F8F8;
+	border: solid #BDBDBD 1px;
+	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5)  ;
+	-webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5)  ;
+	-moz-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5)  ;
+
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+button {
+  border-radius: 8px;
+  width:180px;
+}
+
+img {
+  height: 25px;
+  width:25px;
+}
+
+button:hover,img:hover,input:hover {
+  cursor:pointer;
+  transform: scale(1.05);
+}

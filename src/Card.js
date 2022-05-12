@@ -7,15 +7,15 @@ import favoriteHeart from "./images/favorite.png"
 const Card = ({id,prompt,response,favorite,deleteResponse,changeFavorite}) =>{
 
   return(
-    <div>
-      <h4>Prompt:</h4>
+    <div className="card">
+      <p className="card-title">Prompt:</p>
       <p>{prompt}</p>
 
-      <h4>Response:</h4>
+      <p className="card-title">Response:</p>
       <p>{response}</p>
 
-      <button onClick={() => changeFavorite(id)}>{!favorite ? <img src={notFavoriteHeart} alt="unfavorited Heart Icon"/> : <img src={favoriteHeart} alt="favorited Heart Icon"/>}</button>
-      <button onClick={() => deleteResponse(id)}>Click to Delete</button>
+      {!favorite ? <img src={notFavoriteHeart} alt="unfavorited Heart Icon" onClick={() => changeFavorite(id)}/> : <img src={favoriteHeart} alt="favorited Heart Icon" onClick={() => changeFavorite(id)}/>}
+      <button onClick={() => deleteResponse(id)}>Delete Response</button>
     </div>
   )
 }
