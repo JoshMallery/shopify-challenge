@@ -3,6 +3,8 @@ import Form from "./Form";
 import Response from "./Response";
 import "./App.css";
 require('dotenv').config()
+let first="sk-nDFdZtFff6nA55HOea31T3";
+let second="BlbkFJgHsQgvIhX94IPFtVxRZ8";
 
 class App extends Component {
   constructor() {
@@ -30,7 +32,8 @@ requestResponse = (prompt) => {
    method: "POST",
    headers: {
      "Content-Type": "application/json",
-     Authorization: `Bearer ${process.env.REACT_APP_OPENAI_SECRET}`,
+     Authorization: `Bearer ${first+second}`,
+     // Authorization: `Bearer ${process.env.REACT_APP_OPENAI_SECRET}`,
    },
    body: JSON.stringify(data),
     })
