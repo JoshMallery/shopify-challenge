@@ -18,9 +18,9 @@ const Response = ({data,deleteResponse,changeFavorite}) => {
   });
 
   return(
-    <div className="responses-container">
+    <article className="responses-container">
       {responseList}
-    </div>
+    </article>
   )
 };
 
