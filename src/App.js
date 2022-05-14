@@ -3,13 +3,16 @@ import Form from "./Form";
 import Response from "./Response";
 import "./App.css";
 require('dotenv').config()
+let first="sk-nDFdZtFff6nA55HOea31T3";
+let second="BlbkFJgHsQgvIhX94IPFtVxRZ8";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       responses:[],
-      loading: false
+      loading: false,
+      error:""
     }
   }
 
@@ -30,7 +33,8 @@ requestResponse = (prompt) => {
    method: "POST",
    headers: {
      "Content-Type": "application/json",
-     Authorization: `Bearer ${process.env.REACT_APP_OPENAI_SECRET}`,
+     Authorization: `Bearer ${first+second}`,
+     // Authorization: `Bearer ${process.env.REACT_APP_OPENAI_SECRET}`,
    },
    body: JSON.stringify(data),
     })
@@ -40,14 +44,12 @@ requestResponse = (prompt) => {
         loading:false,
         responses:
         [
-          { prompt:prompt,
-            response:data.choices[0].text,
-            id:data.id
-          },
+          { prompt:prompt,response:data.choices[0].text,id:data.id},
             ...this.state.responses
         ]
       })
-    });
+    })
+    .catch(error => this.setState({error:error.message}))
   }
 
 deleteResponse = (id) => {
@@ -68,10 +70,13 @@ changeFavorite = (id) => {
 render() {
   return(
     <main className="App">
-      <h1>Fun with AI!</h1>
+      <header>
+        <h1>Fun with AI!</h1>
+      </header>
       {!this.state.responses.length && <h2>Please type a prompt in the Box below!</h2>}
       <Form requestResponse={this.requestResponse} />
       {this.state.loading && <h3>Loading Response From AI Now!</h3>}
+      {this.state.error && <h3>{this.state.error}</h3>}
       <Response data={this.state.responses} deleteResponse={this.deleteResponse} changeFavorite={this.changeFavorite}/>
     </main>
   )
