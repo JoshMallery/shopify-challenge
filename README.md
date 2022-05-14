@@ -16,6 +16,7 @@ This is a short app to interact through text chat with the OpenAI.  It demonstra
 ## Future Features
 
 - Adding additional favorite functionality to give the ability to go to a separate page that only shows favorited responses.
+- Although I was able to succesfully utilize the environmental variables on my local machine once on github the Api key was flagged. I would like to have time to make it work correctly and not have a workaround.
 
 ## Contributor
 
