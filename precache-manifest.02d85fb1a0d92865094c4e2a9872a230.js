@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/shopify-challenge/static/media/favorite.74914c32.png"
   },
   {
-    "revision": "ba1fd119209936c7bcface338ac41ece",
+    "revision": "b8b02af1563159cdc5ba578a992cc8ca",
     "url": "/shopify-challenge/index.html"
   }
 ];
