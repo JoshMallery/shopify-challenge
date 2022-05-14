@@ -11,7 +11,7 @@ This is a short app to interact through text chat with the OpenAI.  It demonstra
 - CSS
 - HTML
 - REACT
-- POST, requests
+- POST requests
 
 ## Future Features
 
