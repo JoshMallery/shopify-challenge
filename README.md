@@ -4,6 +4,9 @@
 
 This is a short app to interact through text chat with the OpenAI.  It demonstrates use of Fetch Requests, Object Oriented Programming and accessibility. The app features the ability to favorite responses from the AI as well as Delete responses from the AI.
 
+## Deployed Web App
+
+[Fun with AI!](https://joshmallery.github.io/shopify-challenge/)
 
 ## Technologies Used
 
