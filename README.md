@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a short app to interact through text chat with the OpenAI.  It demonstrates use of Fetch Requests, Object Oriented Programming and accessibility. The app features the ability to favorite responses, delete response, as well as view all favorited responses on a separate page.  
+This is a short app to interact through text chat with the OpenAI.  It demonstrates use of React, Javascript, Object Oriented Programming and accessibility. The app features the ability to favorite responses, delete response, as well as view all favorited responses on a separate page.  
 
 ## Deployed Web App
 
