@@ -1,15 +1,15 @@
 self.__precacheManifest = [
   {
-    "revision": "05391179f11a376e1de9",
-    "url": "/shopify-challenge/static/css/main.1a1e95de.chunk.css"
+    "revision": "e06ef1432da5a96ac8fe",
+    "url": "/shopify-challenge/static/css/main.cf5102b0.chunk.css"
   },
   {
-    "revision": "05391179f11a376e1de9",
-    "url": "/shopify-challenge/static/js/main.05391179.chunk.js"
+    "revision": "e06ef1432da5a96ac8fe",
+    "url": "/shopify-challenge/static/js/main.e06ef143.chunk.js"
   },
   {
-    "revision": "21f717e87d0fdba42844",
-    "url": "/shopify-challenge/static/js/1.21f717e8.chunk.js"
+    "revision": "a348a4f2a5e714136561",
+    "url": "/shopify-challenge/static/js/1.a348a4f2.chunk.js"
   },
   {
     "revision": "3f1cbe1dc1f61194c61d",
@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/shopify-challenge/static/media/favorite.74914c32.png"
   },
   {
-    "revision": "b8b02af1563159cdc5ba578a992cc8ca",
+    "revision": "43fff0059ca92767b365740c96b6dd8e",
     "url": "/shopify-challenge/index.html"
   }
 ];
